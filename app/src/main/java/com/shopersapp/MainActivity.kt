@@ -1,4 +1,4 @@
-package com.venkat.shopersapp
+package com.shopersapp
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
