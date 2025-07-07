@@ -1,0 +1,29 @@
+name: Build & Push Backend Docker
+
+on:
+  push:
+    paths:
+      - 'backend-api/**'
+
+jobs:
+  build-backend:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Docker
+      uses: docker/setup-buildx-action@v3
+
+    - name: Build Docker image
+      run: |
+        cd backend-api
+        docker build -t shopers-api .
+
+    - name: Save Docker image as artifact
+      run: docker save shopersapp-api | gzip > shopersapp-api.tar.gz
+
+    - name: Upload Docker image
+      uses: actions/upload-artifact@v4
+      with:
+        name: shopersapp-backend
+        path: backend-api/shopersapp-api.tar.gz
