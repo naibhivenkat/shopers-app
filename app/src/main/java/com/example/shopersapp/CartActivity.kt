@@ -1,4 +1,4 @@
-package com.example.shopersapp.network
+package com.example.shopersapp
 
 import android.content.Context
 import android.widget.Toast
