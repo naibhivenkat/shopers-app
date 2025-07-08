@@ -8,18 +8,25 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface ApiService {
+
     @POST("login")
-    fun login(@Body request: LoginRequest): Call<LoginResponse>
+    fun loginUser(@Body request: LoginRequest): Call<LoginResponse>
+
+    @POST("register")
+    fun register(@Body request: RegisterRequest): Call<RegisterResponse>
 
     @GET("shops")
     fun getShops(): Call<List<Shop>>
 
-    @GET("shops/{id}/items")
-    fun getItems(@Path("id") shopId: Int): Call<List<Item>>
+    @GET("shop/{id}/items")
+    fun fetchItems(@Path("id") shopId: Int): Call<List<Item>>
+
+    @POST("orders")
+    fun placeOrder(@Body order: Order): Call<Void>
 
     @GET("orders")
-    fun getOrders(): Call<List<Order>>
+    fun fetchOrders(): Call<List<Order>>
 
     @POST("orders/{id}/complete")
-    fun completeOrder(@Path("id") orderId: Int): Call<Void>
+    fun markOrderComplete(@Path("id") orderId: Int): Call<Void>
 }
