@@ -1,4 +1,5 @@
-package com.shopersapp
+package com.example.shopersapp
+
 
 import android.content.Intent
 import android.os.Bundle

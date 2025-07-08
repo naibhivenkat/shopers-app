@@ -1,4 +1,5 @@
-package com.shopersapp
+package com.example.shopersapp
+
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

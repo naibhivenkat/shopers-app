@@ -1,4 +1,4 @@
-package com.shopersapp.network
+package com.example.shopersapp.network
 
 data class LoginResponse(
     val status: String,

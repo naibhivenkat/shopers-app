@@ -1,4 +1,4 @@
-package com.shopersapp.network
+package com.example.shopersapp.network
 
 import com.shopersapp.models.Shop
 import retrofit2.Call

@@ -1,4 +1,4 @@
-package com.shopers.app.models
+package com.example.shopersapp.app.models
 
 data class User(
     val id: Int,
