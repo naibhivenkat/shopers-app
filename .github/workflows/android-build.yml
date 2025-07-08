@@ -20,9 +20,12 @@ jobs:
 
     - name: Make Gradle executable
       run: chmod +x ./gradlew
-      
+
     - name: Set up Gradle
       uses: gradle/actions/setup-gradle@v3
+
+    - name: Clean previous build
+      run: ./gradlew clean
 
     - name: Build APK
       run: ./gradlew assembleDebug
