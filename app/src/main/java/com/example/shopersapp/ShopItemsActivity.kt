@@ -23,7 +23,7 @@ class ShopItemsActivity : AppCompatActivity() {
         itemListView = findViewById(R.id.itemListView)
         val cartBtn = findViewById<Button>(R.id.viewCartButton)
 
-        ApiService.fetchItems(shopId, this) { itemList ->
+        ApiClient.apiService.fetchItems(shopId, this) { itemList ->
             val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, itemList.map { "${it.name} - ₹${it.price}" })
             itemListView.adapter = adapter
             itemListView.setOnItemClickListener { _, _, position, _ ->

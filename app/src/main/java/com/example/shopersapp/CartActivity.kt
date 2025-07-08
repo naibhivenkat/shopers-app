@@ -25,7 +25,7 @@ class CartActivity : AppCompatActivity() {
         listView.adapter = adapter
 
         confirmBtn.setOnClickListener {
-            ApiService.placeOrder(shopId, cartItems, this)
+            ApiClient.apiService.placeOrder(shopId, cartItems, this)
         }
     }
 }

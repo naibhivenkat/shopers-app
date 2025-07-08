@@ -19,7 +19,7 @@ class RegisterActivity : AppCompatActivity() {
         roleSpinner.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, roles)
 
         registerBtn.setOnClickListener {
-            ApiService.register(
+            ApiClient.apiService.register(
                 username.text.toString(),
                 password.text.toString(),
                 roleSpinner.selectedItem.toString(),
