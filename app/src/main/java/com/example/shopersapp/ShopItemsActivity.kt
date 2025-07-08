@@ -9,6 +9,8 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.shopersapp.network.ApiService
 
+import com.example.shopersapp.network.fetchItems
+
 
 class ShopItemsActivity : AppCompatActivity() {
     private lateinit var itemListView: ListView
@@ -23,14 +25,15 @@ class ShopItemsActivity : AppCompatActivity() {
         itemListView = findViewById(R.id.itemListView)
         val cartBtn = findViewById<Button>(R.id.viewCartButton)
 
-        ApiClient.apiService.fetchItems(shopId, this) { itemList ->
-            val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, itemList.map { "${it.name} - ₹${it.price}" })
-            itemListView.adapter = adapter
-            itemListView.setOnItemClickListener { _, _, position, _ ->
-                cartItems.add(itemList[position])
-                Toast.makeText(this, "${itemList[position].name} added to cart", Toast.LENGTH_SHORT).show()
-            }
-        }
+       fetchItems(shopId, this) { itemList ->
+    val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, itemList.map { "${it.name} - ₹${it.price}" })
+    itemListView.adapter = adapter
+    itemListView.setOnItemClickListener { _, _, position, _ ->
+        cartItems.add(itemList[position])
+        Toast.makeText(this, "${itemList[position].name} added to cart", Toast.LENGTH_SHORT).show()
+    }
+}
+
 
         cartBtn.setOnClickListener {
             val intent = Intent(this, CartActivity::class.java)

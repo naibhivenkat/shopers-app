@@ -1,11 +1,10 @@
 package com.example.shopersapp
 
-
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.example.shopersapp.network.ApiService
 import com.example.shopersapp.models.Item
+import com.example.shopersapp.network.placeOrder // ✅ fix
 
 class CartActivity : AppCompatActivity() {
     private var shopId: Int = 0
@@ -25,7 +24,7 @@ class CartActivity : AppCompatActivity() {
         listView.adapter = adapter
 
         confirmBtn.setOnClickListener {
-            ApiClient.apiService.placeOrder(shopId, cartItems, this)
+            placeOrder(shopId, cartItems, this)
         }
     }
 }
