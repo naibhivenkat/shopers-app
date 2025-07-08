@@ -1,10 +1,7 @@
-package com.example.shopersapp.app.models
+package com.example.shopersapp.models
 
 data class Order(
     val id: Int,
-    val customerId: Int,
-    val shopId: Int,
     val customerName: String,
-    val items: List<Item>,
-    val status: String
+    val items: List<Item>
 )

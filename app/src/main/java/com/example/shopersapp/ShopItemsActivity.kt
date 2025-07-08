@@ -1,11 +1,14 @@
 package com.example.shopersapp
 
+import android.content.Intent
+import com.example.shopersapp.models.Item
+import com.example.shopersapp.network.ApiClient
 
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.shopersapp.network.ApiService
-import com.example.shopersapp.models.Item
+
 
 class ShopItemsActivity : AppCompatActivity() {
     private lateinit var itemListView: ListView

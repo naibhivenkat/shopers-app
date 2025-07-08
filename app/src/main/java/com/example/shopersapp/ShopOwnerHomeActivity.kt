@@ -1,9 +1,9 @@
 package com.example.shopersapp
+import com.example.shopersapp.models.Order
 
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.example.shopersapp.models.Order
 import com.example.shopersapp.network.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
