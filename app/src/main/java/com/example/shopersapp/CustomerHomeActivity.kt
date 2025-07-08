@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.shopersapp.adapters.ShopAdapter
+import com.example.shopersapp.ShopAdapter
 import com.example.shopersapp.models.Shop
 import com.example.shopersapp.network.ApiClient
 import retrofit2.Call
