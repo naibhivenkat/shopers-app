@@ -1,4 +1,5 @@
 package com.example.shopersapp
+import com.example.shopersapp.network.ApiClient
 
 import android.content.Context
 import android.widget.Toast
