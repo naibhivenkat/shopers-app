@@ -4,12 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.example.shopersapp.models.LoginRequest
-import com.example.shopersapp.models.LoginResponse
 import com.example.shopersapp.network.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import com.example.shopersapp.network.LoginRequest
+import com.example.shopersapp.network.LoginResponse
 
 class LoginActivity : AppCompatActivity() {
 

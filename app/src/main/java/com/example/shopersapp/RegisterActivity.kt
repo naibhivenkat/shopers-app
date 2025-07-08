@@ -1,10 +1,10 @@
 package com.example.shopersapp
+import com.example.shopersapp.network.RegisterRequest
+import com.example.shopersapp.network.RegisterResponse
 
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.example.shopersapp.models.RegisterRequest
-import com.example.shopersapp.models.RegisterResponse
 import com.example.shopersapp.network.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
