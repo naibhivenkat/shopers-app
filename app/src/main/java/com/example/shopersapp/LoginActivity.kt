@@ -9,7 +9,8 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import com.example.shopersapp.network.LoginRequest
-import com.example.shopersapp.network.LoginResponse
+import com.example.shopersapp.models.LoginResponse
+
 
 class LoginActivity : AppCompatActivity() {
 
