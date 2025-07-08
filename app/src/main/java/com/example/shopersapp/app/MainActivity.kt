@@ -1,4 +1,5 @@
-package com.example.shopersapp
+package com.example.shopersapp.app
+
 
 
 import android.os.Bundle

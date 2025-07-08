@@ -1,4 +1,4 @@
-package com.example.shopersapp.network
+package package com.example.shopersapp.network
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
