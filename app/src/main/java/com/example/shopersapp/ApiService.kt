@@ -1,13 +1,14 @@
-package com.example.shopersapp.network
+package com.example.shopersapp
 
-import com.example.shopersapp.models.LoginRequest
-import com.example.shopersapp.models.LoginResponse
 import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
 
+data class LoginRequest(val username: String, val password: String)
+data class LoginResponse(val success: Boolean, val role: String)
+
 interface ApiService {
-    @POST("/login")
-    fun loginUser(@Body loginRequest: LoginRequest): Call<LoginResponse>
+    @POST("login")
+    fun login(@Body request: LoginRequest): Call<LoginResponse>
 }
->
