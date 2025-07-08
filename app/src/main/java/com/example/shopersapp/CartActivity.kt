@@ -1,30 +1,26 @@
-package com.example.shopersapp
+package com.example.shopersapp.network
 
-import android.os.Bundle
-import android.widget.*
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
+import android.widget.Toast
 import com.example.shopersapp.models.Item
-import com.example.shopersapp.network.placeOrder // ✅ fix
+import com.example.shopersapp.models.PlaceOrderRequest
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-class CartActivity : AppCompatActivity() {
-    private var shopId: Int = 0
-    private var cartItems = listOf<Item>()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cart)
-
-        val listView = findViewById<ListView>(R.id.cartListView)
-        val confirmBtn = findViewById<Button>(R.id.confirmOrderButton)
-
-        shopId = intent.getIntExtra("shop_id", 0)
-        cartItems = intent.getParcelableArrayListExtra<Item>("cart_items") ?: listOf()
-
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, cartItems.map { "${it.name} - ₹${it.price}" })
-        listView.adapter = adapter
-
-        confirmBtn.setOnClickListener {
-            placeOrder(shopId, cartItems, this)
+fun placeOrder(shopId: Int, items: List<Item>, context: Context) {
+    val request = PlaceOrderRequest(shopId, items)
+    ApiClient.apiService.placeOrder(request).enqueue(object : Callback<Void> {
+        override fun onResponse(call: Call<Void>, response: Response<Void>) {
+            if (response.isSuccessful) {
+                Toast.makeText(context, "Order placed successfully", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(context, "Failed to place order", Toast.LENGTH_SHORT).show()
+            }
         }
-    }
+
+        override fun onFailure(call: Call<Void>, t: Throwable) {
+            Toast.makeText(context, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
+        }
+    })
 }
