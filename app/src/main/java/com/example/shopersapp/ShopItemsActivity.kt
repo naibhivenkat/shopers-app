@@ -1,5 +1,7 @@
 package com.example.shopersapp
 
+import com.example.shopersapp.CartActivity
+
 import android.content.Intent
 import com.example.shopersapp.models.Item
 import com.example.shopersapp.network.ApiClient
