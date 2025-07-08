@@ -3,7 +3,7 @@ package com.example.shopersapp
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.shopers.app.network.ApiService
+import com.shopersapp.network.ApiService
 
 class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

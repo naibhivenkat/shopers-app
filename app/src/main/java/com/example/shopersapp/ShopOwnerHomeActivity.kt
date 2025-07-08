@@ -3,8 +3,8 @@ package com.example.shopersapp
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.shopers.app.network.ApiService
-import com.shopers.app.models.Order
+import com.shopersapp.network.ApiService
+import com.shopersapp.models.Order
 
 class ShopkeeperHomeActivity : AppCompatActivity() {
     private lateinit var orderListView: ListView
